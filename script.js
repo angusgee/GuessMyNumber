@@ -12,5 +12,16 @@ document.querySelector(".check").addEventListener("click", function () {
 
   if (!guess) {
     document.querySelector(".message").textContent = "🚫 No number entered!";
+  } else if (guess === secretNumber) {
+    document.querySelector(".message").textContent = "💥 Correct Number! 💥";
+  } else if (guess > secretNumber) {
+    if (guess > 20) {
+      document.querySelector(".message").textContent =
+        "🚫 Number greater than 20!";
+    } else {
+      document.querySelector(".message").textContent = "📈 Too high!";
+    }
+  } else if (guess < secretNumber) {
+    document.querySelector(".message").textContent = "📉 Too low!";
   }
 });
