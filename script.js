@@ -10,7 +10,7 @@ const score = document.querySelector(".score");
 const body = document.querySelector("body");
 
 function updateMessage(msg) {
-  messageText.textContent = `${msg}`;
+  messageText.textContent = msg;
 }
 
 // add event listener to the check button
