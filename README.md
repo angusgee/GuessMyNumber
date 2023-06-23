@@ -1,5 +1,8 @@
 # GuessMyNumber
 
-## Live site
+## Retro 1980s Number guessing game
 
-[Guess my number live URL](https://maltawebdev.github.io/GuessMyNumber/)
+Technologies used: Vanilla JS, HTML5, CSS3.
+Deployed: Github Pages.
+
+[Click here to play!👾](https://maltawebdev.github.io/GuessMyNumber/)
