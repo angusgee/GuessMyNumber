@@ -13,6 +13,10 @@ function updateMessage(msg) {
   messageText.textContent = msg;
 }
 
+function updateScore(score) {
+  score.textContent = score;
+}
+
 // add event listener to the check button
 document.querySelector(".check").addEventListener("click", function () {
   const guess = Number(document.querySelector(".guess").value);
@@ -36,10 +40,12 @@ document.querySelector(".check").addEventListener("click", function () {
     if (playerScore > 1) {
       updateMessage("📈 Too high!");
       playerScore--;
+      updateScore(playerScore);
       score.textContent = playerScore;
     } else {
       updateMessage("💀 You lost the game!");
       score.textContent = 0;
+      updateScore(0);
     }
 
     if (guess > 20) {
@@ -51,10 +57,10 @@ document.querySelector(".check").addEventListener("click", function () {
     if (playerScore > 1) {
       updateMessage("📉 Too low!");
       playerScore--;
-      score.textContent = playerScore;
+      updateScore(playerScore);
     } else {
       updateMessage("💀 You lost the game!");
-      score.textContent = 0;
+      updateScore(0);
     }
   }
 });
@@ -64,8 +70,9 @@ document.querySelector(".again").addEventListener("click", function () {
   playerScore = 20;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   updateMessage("Start guessing...");
-  score.textContent = playerScore;
+  updateScore(playerScore);
   number.textContent = "?";
+  body.style.backgroundImage = "none";
   body.style.backgroundColor = "#222";
   number.style.width = "15rem";
   document.querySelector(".guess").value = "";
