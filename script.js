@@ -29,8 +29,8 @@ document.querySelector(".check").addEventListener("click", function () {
     // when player wins
   } else if (guess === secretNumber) {
     updateMessage("💥 Correct Number! 💥");
-    body.style.backgroundImage =
-      "linear-gradient(to right top, #60b347, #428b37, #286427, #114017, #001f00)";
+    body.classList.add("win-background");
+    console.log(body.classList);
     number.textContent = secretNumber;
     number.style.width = "30rem";
     document.querySelector(".highscore").textContent = playerScore;
@@ -67,13 +67,13 @@ document.querySelector(".check").addEventListener("click", function () {
 
 // add event listener to the again button
 document.querySelector(".again").addEventListener("click", function () {
+  body.classList.remove("win-background");
+  body.style.backgroundColor = "#222";
+  document.querySelector(".guess").value = "";
   playerScore = 20;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   updateMessage("Start guessing...");
   updateScore(playerScore);
   number.textContent = "?";
-  body.style.backgroundImage = "none";
-  body.style.backgroundColor = "#222";
   number.style.width = "15rem";
-  document.querySelector(".guess").value = "";
 });

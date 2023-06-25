@@ -117,3 +117,14 @@ h1 {
 .label-score {
   margin-bottom: 2rem;
 }
+
+.win-background {
+  background-image: linear-gradient(
+    to right top,
+    #60b347,
+    #428b37,
+    #286427,
+    #114017,
+    #001f00
+  );
+}
